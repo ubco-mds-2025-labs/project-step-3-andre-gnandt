@@ -28,4 +28,4 @@ jobs:
           pip install pygal
 
       - name: Run Python script
-        run: python unittest test-suite
+        run: python -m unittest test-suite
