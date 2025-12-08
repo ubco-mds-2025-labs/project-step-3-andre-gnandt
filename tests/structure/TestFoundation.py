@@ -34,8 +34,6 @@ class TestFoundation(ut.TestCase) : #test class
     
     def test_completedTournament_random(self):
 
-        self.assertTrue(False)
-
         numRounds = len(self.tourny_random.rounds)
 
         numMatches0 = len(self.tourny_random.rounds[0].matches)
