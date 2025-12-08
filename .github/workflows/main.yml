@@ -1,0 +1,30 @@
+ name: main
+
+    on:
+      push:
+        branches:
+          - main 
+      workflow_dispatch: 
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest 
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v4
+
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.13.5' 
+
+          - name: Install dependencies (if any)
+            run: |
+              python -m pip install --upgrade pip
+              pip install networkx[all]
+              pip install matplotlib
+              pip install pygal
+
+          - name: Run Python script
+            run: python test-suite.py
