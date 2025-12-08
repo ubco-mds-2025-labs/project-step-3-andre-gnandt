@@ -98,10 +98,10 @@ def treeTournament(tourn, fileName = None) :
     except PermissionError as e:
         print(e)
     except :
-        print("Exception: could not save Tree Tournament Diagram as: '"+fileName+
+        print("\nEXCEPTION: could not save Tree Tournament Diagram as: '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
     else:
-        print("Successfully saved tournament tree diagram as '"+fileName+
+        print("\nSUCCESS: saved tournament tree diagram as '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
 
     

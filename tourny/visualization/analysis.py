@@ -24,10 +24,10 @@ def plotPieTournament(winnerProbabilities, pairingType = None, fileName = None):
     except PermissionError as e:
         print(e)
     except :
-        print("Exception: could not save Winner Probabilities Pie Chart as: '"+fileName+
+        print("\nEXCEPTION: could not save Winner Probabilities Pie Chart as: '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
     else:
-        print("Successfully saved Winner Probabilities Pie Chart as '"+fileName+
+        print("\nSUCCESS: saved Winner Probabilities Pie Chart as '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
 
 def pieTournament(tournament, fileName = None, numSimulations=100000):
@@ -54,10 +54,10 @@ def plotPieTeam(roundProbabilities, teamName, pairingType = None, fileName = Non
     except PermissionError as e:
         print(e)
     except :
-        print("Exception: could not save Round Probabilities Pie Chart as: '"+fileName+
+        print("\nEXCEPTION: could not save Round Probabilities Pie Chart as: '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
     else:
-        print("Successfully saved Round Probabilities Pie Chart as '"+fileName+
+        print("\nSUCCESS: saved Round Probabilities Pie Chart as '"+fileName+
         ".svg' in the current directory: '"+os.getcwd()+"'.")
 
 def pieTeam(tournament, teamName, fileName = None, numSimulations=100000):
