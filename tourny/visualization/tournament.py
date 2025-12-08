@@ -1,4 +1,4 @@
-import glob, re
+import glob, re, os
 from datetime import datetime
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -90,5 +90,19 @@ def treeTournament(tourn, fileName = None) :
     plt.title("Tournament Outcome:")
     if not fileName :
         fileName = getNewFileName("TournamentTree")
-    plt.savefig(fileName+".svg")
+
+    try :
+        plt.savefig(fileName+".svg")
+    except IOError as e:
+        print(e)
+    except PermissionError as e:
+        print(e)
+    except :
+        print("Exception: could not save Tree Tournament Diagram as: '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
+    else:
+        print("Successfully saved tournament tree diagram as '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
+
+    
     plt.show()

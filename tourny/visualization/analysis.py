@@ -1,4 +1,4 @@
-import pygal 
+import pygal, os
 from ..analysis import tournament as tourny
 from ..analysis import team as tournyTeam
 from ..structure.foundation import Tournament
@@ -17,7 +17,18 @@ def plotPieTournament(winnerProbabilities, pairingType = None, fileName = None):
     if not fileName :
         fileName = getNewFileName("pieTournament")
 
-    pieChart.render_to_file(fileName+".svg")
+    try :
+        pieChart.render_to_file(fileName+".svg")
+    except IOError as e:
+        print(e)
+    except PermissionError as e:
+        print(e)
+    except :
+        print("Exception: could not save Winner Probabilities Pie Chart as: '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
+    else:
+        print("Successfully saved Winner Probabilities Pie Chart as '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
 
 def pieTournament(tournament, fileName = None, numSimulations=100000):
     winnerProbabilities = tourny.getWinnerProbabilities(tournament, numSimulations)
@@ -36,7 +47,18 @@ def plotPieTeam(roundProbabilities, teamName, pairingType = None, fileName = Non
     if not fileName :
         fileName = getNewFileName("pieTeam")
 
-    pieChart.render_to_file(fileName+".svg")
+    try :
+        pieChart.render_to_file(fileName+".svg")
+    except IOError as e:
+        print(e)
+    except PermissionError as e:
+        print(e)
+    except :
+        print("Exception: could not save Round Probabilities Pie Chart as: '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
+    else:
+        print("Successfully saved Round Probabilities Pie Chart as '"+fileName+
+        ".svg' in the current directory: '"+os.getcwd()+"'.")
 
 def pieTeam(tournament, teamName, fileName = None, numSimulations=100000):
     roundProbabilities = tournyTeam.getRoundProbablities(tournament, teamName, numSimulations)
