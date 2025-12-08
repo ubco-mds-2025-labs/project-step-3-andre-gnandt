@@ -13,10 +13,7 @@ class Team():
         return f'name: {self.name}, quality: {self.quality}'
 
     def probabilityOfWinning(self, opponent):
-        try:
-            return self.quality / (self.quality + opponent.quality)
-        except ZeroDivisonError:
-            print("")
+        return self.quality / (self.quality + opponent.quality)
 
 class HogwartsHouse(Team):
 
