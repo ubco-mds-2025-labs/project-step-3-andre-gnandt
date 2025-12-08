@@ -1,4 +1,4 @@
-import random
+import random,sys
 
 class Team():
 
@@ -99,12 +99,29 @@ class Round():
     def runRound(self):
         for match in self.matches:
             match.runMatch()
+
+class TournamentSizeError(Exception):
+    def __init__(self, length):
+        self.length = length
+    
+    def  __str__(self):
+        return "Tournament Size Exception: the number of teams must be a power of 2, " +
+            "the number of teams is "+str(self.length)
             
 class Tournament():
 
     def __init__(self,
                  teams,
                  pairingType = 'random'):
+
+        try :
+            n = len(teams)
+            if n > 0 and (n & (n - 1)) != 0 :
+                raise TournamentSizeError(n)
+        except TournamentSizeError as e:
+            print(e)
+            print("Exiting Program")
+            sys.exit()
 
         self.teams = teams
         self.pairingType = pairingType
