@@ -105,8 +105,7 @@ class TournamentSizeError(Exception):
         self.length = length
     
     def  __str__(self):
-        return "Tournament Size Exception: the number of teams must be a power of 2, " +
-            "the number of teams is "+str(self.length)
+        return "Tournament Size Exception: the number of teams must be a power of 2, the number of teams is "+str(self.length)
             
 class Tournament():
 
