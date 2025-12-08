@@ -1,10 +1,13 @@
 from .foundation import *
 
 def countTeams(teams):
-    return len(teams)
+    try:
+        return len(teams)
+    except TypeError:
+        print("The input must be a list of Teams.")
 
 def sortTeamsByQuality(teams):
-    return sorted(teams, key=lambda t: t.quality, reverse=True)
+    return sorted(teams, key=lambda team: team.quality, reverse=True)
 
 def getBestTeams(teams):
 

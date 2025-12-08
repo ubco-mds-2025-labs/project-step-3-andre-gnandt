@@ -16,7 +16,7 @@ class Team():
         try:
             return self.quality / (self.quality + opponent.quality)
         except ZeroDivisonError:
-            print("")
+            print("Both teams can not both have a quality of zero.")
 
 class HogwartsHouse(Team):
 
