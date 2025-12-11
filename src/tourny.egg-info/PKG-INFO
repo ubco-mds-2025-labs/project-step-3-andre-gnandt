@@ -4,6 +4,8 @@ Version: 0.0.1
 Summary: Tournament Simulator
 Author-email: Andre Gnandt <gnandtandre@outlook.com>, Jamie Breault <jamiegbreault@gmail.com>
 Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: license-file
 
 # tourny - Tournament Simulator
 
