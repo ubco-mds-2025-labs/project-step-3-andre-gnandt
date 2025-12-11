@@ -1,9 +1,9 @@
 import unittest
-from tests.structure.TestFoundation import TestFoundation
-from tests.analysis.TestTournament import TestTournament as TestTournamentAnalysis
-from tests.analysis.TestTeam import TestTeam as TestTeamAnalysis
-from tests.visualization.TestTournament import TestTournament as TestTournamentViz
-from tests.visualization.TestAnalysis import TestAnalysis as TestAnalysisViz
+from structure.TestFoundation import TestFoundation
+from analysis.TestTournament import TestTournament as TestTournamentAnalysis
+from analysis.TestTeam import TestTeam as TestTeamAnalysis
+from visualization.TestTournament import TestTournament as TestTournamentViz
+from visualization.TestAnalysis import TestAnalysis as TestAnalysisViz
 
 def test_suite():
     suite = unittest.TestSuite()
