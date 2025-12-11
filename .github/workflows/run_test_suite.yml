@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies (if any)
         run: |
-          working-directory: ./tests
+          cd tests
           python -m pip install --upgrade pip
           pip install -e .
           pip install networkx[all]
