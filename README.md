@@ -4,8 +4,8 @@
 ### Jamie Breault 26478172  
   
   
-## published PyPi link: https://pypi.org/project/tourny/0.0.1/
-## published test PyPi link: https://test.pypi.org/project/tourny/0.0.1/  
+## published PyPi link: https://pypi.org/project/tourny/0.0.2/
+## published test PyPi link: https://test.pypi.org/project/tourny/0.0.2/  
   
 ## CI/CD Info:  
 Our CI/CD is set up using github actions, you can view the .github/workflows/run_test_suite.yml file for exact details. It is set up to run the test suite on any push to any branch. If any test failures occur in the test suite then the workflow fails and an email is sent to alert the pusher/committer.  
