@@ -40,7 +40,6 @@ class TestAnalysis(ut.TestCase):
 
         pieTournament(self.tourny, "TOURNTEST2")
         self.assertTrue(len(glob.glob("TOURNTEST2.svg")) >= 1)
-        self.assertTrue(False)
 
     def test_plot_pie_team(self) :
         teamName = 'Fabiano Caruana'
