@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest 
     defaults:
       run:
-        working-directory: ./tests
+        working-directory: ./
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,6 +25,7 @@ jobs:
 
       - name: Install dependencies (if any)
         run: |
+          working-directory: ./tests
           python -m pip install --upgrade pip
           pip install -e .
           pip install networkx[all]
