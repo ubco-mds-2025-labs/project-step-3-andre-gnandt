@@ -5,6 +5,13 @@ from analysis.TestTeam import TestTeam as TestTeamAnalysis
 from visualization.TestTournament import TestTournament as TestTournamentViz
 from visualization.TestAnalysis import TestAnalysis as TestAnalysisViz
 
+class TestFailure(Exception) :
+    def __init__(self, length):
+        pass
+    
+    def  __str__(self):
+        return "Test Error or Failure!"
+
 def test_suite():
     suite = unittest.TestSuite()
     result = unittest.TestResult()
@@ -28,6 +35,10 @@ def test_suite():
     suite.addTest(TestAnalysisViz('test_plot_pie_team'))
 
     runner = unittest.TextTestRunner()
-    print(runner.run(suite))
+    results = runner.run(suite)
+    print(results)
+
+    if not results.wasSuccessful() or len(results.errors) > 0 or len(results.failures) > 0:
+            raise TestFailure()
 
 test_suite()
