@@ -49,6 +49,7 @@ class TestFoundation(ut.TestCase) : #test class
         self.assertEqual(numMatches2, 4)
         self.assertEqual(numMatches3, 2)
         self.assertEqual(numMatches4, 1)
+        self.assertTrue(False)
 
     def test_completedTournament_similar(self):
 
