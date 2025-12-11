@@ -6,7 +6,7 @@ from visualization.TestTournament import TestTournament as TestTournamentViz
 from visualization.TestAnalysis import TestAnalysis as TestAnalysisViz
 
 class TestFailure(Exception) :
-    def __init__(self, length):
+    def __init__(self):
         pass
     
     def  __str__(self):
